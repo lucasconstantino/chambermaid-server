@@ -32,9 +32,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+  //'/dashboard': {
+  //  view: 'homepage'
+  //},
+  
 
   /***************************************************************************
   *                                                                          *
@@ -46,9 +47,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /': 'AuthController.login',
   'get /login': 'AuthController.login',
   'get /logout': 'AuthController.logout',
   'get /register': 'AuthController.register',
+  'get /isAuthenticated': 'AuthController.isAuthenticated',
 
   'post /auth/local': 'AuthController.callback',
   'post /auth/local/:action': 'AuthController.callback',
@@ -56,4 +59,6 @@ module.exports.routes = {
   'get /auth/:provider': 'AuthController.provider',
   'get /auth/:provider/callback': 'AuthController.callback',
   'get /auth/:provider/:action': 'AuthController.callback',
+  
+  'get /device/auth': 'DeviceController.auth'
 };

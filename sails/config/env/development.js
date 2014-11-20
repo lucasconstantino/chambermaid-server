@@ -20,5 +20,7 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
+  
+  proxyHost: 'chambermaid.diogovianna.com:1337/'
 
 };

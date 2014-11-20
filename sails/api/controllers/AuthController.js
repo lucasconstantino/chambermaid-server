@@ -176,7 +176,20 @@ var AuthController = {
    */
   disconnect: function (req, res) {
     passport.disconnect(req, res);
+  },
+  
+  /**
+   * Checks if is authenticated
+   */
+  isAuthenticated: function (req, res) {
+    if (req.user) {
+      res.send(req.user);
+    } else {
+      res.send(false)
+    }
+    
   }
+  
 };
 
 module.exports = AuthController;
