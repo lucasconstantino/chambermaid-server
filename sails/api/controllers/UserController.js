@@ -6,6 +6,9 @@
  */
 
 module.exports = {
-	
+  addDevice: function(req, res) {
+  	sn = req.body.sn;
+  	
+	},
 };
 

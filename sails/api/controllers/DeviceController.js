@@ -19,12 +19,13 @@ module.exports = {
       	console.log('no device found')
     	}
   	});
-
 	},
 	
 	isAuthenticated: function(req, res) {
   	res.send(req.session.device);
   	console.log(req.session);
 	}
+	
+	
 };
 

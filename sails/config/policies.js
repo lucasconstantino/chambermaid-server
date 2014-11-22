@@ -26,8 +26,15 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+
   '*': [ 'passport' ],
+
+  UserController: {
+    '*': false
+  },
+  DeviceController: {
+    '*': 'isAdmin'
+  }
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *
