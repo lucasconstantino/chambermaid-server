@@ -13,6 +13,9 @@ module.exports = function(req, res, next) {
   // or if this is the last policy, the controller
   if (req.session.passport) {
     User.findOneById(req.session.passport.user, function(err, user) {
+      if (err) {
+        return;
+      }
       if (user.email == "diogo@taller.net.br") {
         return next();
       }

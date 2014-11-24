@@ -1,3 +1,20 @@
 <div id='dashboard-page'>
-  <%= console.log(req) %>
+  <h2>Devices</h2>
+  <ul class='table-actions'>
+    <li>Link Device</li>
+    <li>Unlink Device</li>
+  </ul>
+  <table id='user-device-list' class='device-list'>
+    List devices
+  </table
 </div>
+
+<script>
+
+jQuery(document).ready(function() {
+  io.socket.get('/user/devices', function serverResponded (body, sailsResponseObject) {
+    console.log(body);
+  });
+});
+
+</script>

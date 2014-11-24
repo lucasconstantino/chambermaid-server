@@ -45,7 +45,8 @@ module.exports = {
     // e.g. RWUR38S7J4EU7TJN
     serialNumber: {
       type: 'string',
-      unique: true
+      unique: true,
+      required: true
     }
   }
 };
