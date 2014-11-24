@@ -14,6 +14,9 @@
 
 module.exports = function forbidden (data, options) {
 
+  // Default forbidden text reponse.
+  data = typeof data != 'undefined' ? data : 'You are not permitted to perform this action.';
+
   // Get access to `req`, `res`, & `sails`
   var req = this.req;
   var res = this.res;

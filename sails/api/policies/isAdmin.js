@@ -8,20 +8,14 @@
  *
  */
 module.exports = function(req, res, next) {
+  if (!req.session.passport) return res.forbidden();
 
-  // User is allowed, proceed to the next policy, 
-  // or if this is the last policy, the controller
-  if (req.session.passport) {
-    User.findOneById(req.session.passport.user, function(err, user) {
-      if (err) {
-        return;
-      }
-      if (user.email == "diogo@taller.net.br") {
-        return next();
-      }
-      return res.forbidden('You are not permitted to perform this action.');
-    });
-  } else {
-    return res.forbidden('You are not permitted to perform this action.');
-  }
+  User.findOneById(req.session.passport.user, function(err, user) {
+    if (err) return next(err);
+
+    // @todo: find a better way to identify the admin.
+    if (user && user.email == 'diogo@taller.net.br') return next();
+
+    res.forbidden();
+  });
 };
