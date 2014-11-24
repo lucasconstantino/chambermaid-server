@@ -2,8 +2,7 @@
  * isAdmin
  *
  * @module      :: Policy
- * @description :: Simple policy to allow any authenticated user
- *                 Assumes that your login action in one of your controllers sets `req.session.authenticated = true;`
+ * @description :: Simple policy to give resource access for an admin user.
  * @docs        :: http://sailsjs.org/#!documentation/policies
  *
  */
