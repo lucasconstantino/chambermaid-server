@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "sails/package.json"
+      ]
+    }
+  }
+}
